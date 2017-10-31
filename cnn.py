@@ -61,9 +61,10 @@ test_set = test_datagen.flow_from_directory('dataset/test_set',
                                             target_size = (64, 64),
                                             batch_size = 32,
                                             class_mode = 'binary')
-
+print('strating fit!')
 classifier.fit_generator(training_set,
                          steps_per_epoch = 8000,
                          epochs = 25,
                          validation_data = test_set,
-                         validation_steps = 2000)
+                         validation_steps = 2000,
+                        n_jobs = -1)
